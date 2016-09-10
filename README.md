@@ -9,3 +9,4 @@ The functions in this repo are meant to make these tasks a bit easier.
 
 (Note that respec does have some undocumented possibilities for those, but they have proven way too poor for my usage. This set is meant to be a replacement for those.)
 
+[The meat is coming soon... this is just to set up the repo:-)]
