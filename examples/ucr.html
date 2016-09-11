@@ -3,12 +3,13 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <title>Testig a UCR with a collection of requirements</title>
-    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove" async></script>
     <script src="../scripts/rcollect.js" class="remove"></script>
     <script src="../scripts/rdisplay.js" class="remove"></script>
     <script class="remove">
       var respecConfig = {
           preProcess : [rcollect, rdisplay],
+          postProcess: [rstore],
 
           doRdfa: "false",
           // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
@@ -95,7 +96,7 @@
 
     <section>
         <h2>display the requirements in table</h2>
-        <table id="reqtable">
+        <table id="reqtable" border="1px">
         </table>
     </section>
 

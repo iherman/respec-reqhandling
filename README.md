@@ -95,10 +95,10 @@ Insert the following list into the document:
 
 ### [UCR document](id:install_ucr)
 
-1. Remove, if applicable, the `async` attribute from the reference to the `respec` script in the header.
-2. Add into the header (*after* the reference to `respec`): `<script class="remove" src="scripts/rcollect.js"></script>`.
-3. If the document also uses internal [references to requirements](#referring), add also (after the previous reference): `script class="remove" src="scripts/rdisplay.js"></script>`.
-4. Add, in `respecConfig`, `preProcess : [rcollect],` or `preProcess : [rcollect, rdisplay],` depending on whether the document uses internal [references to requirements](#referring) or not.
+1. Add into the header (*after* the reference to `respec`): `<script class="remove" src="scripts/rcollect.js"></script>`.
+2. If the document also uses internal [references to requirements](#referring), add also (after the previous reference): `script class="remove" src="scripts/rdisplay.js"></script>`.
+3. Add, in `respecConfig`, `preProcess : [rcollect],` or `preProcess : [rcollect, rdisplay],` depending on whether the document uses internal [references to requirements](#referring) or not.
+4. Add, in `respecConfig`, postProcess: [rstore].
 
 ### [Other documents](id:install_other)
 
