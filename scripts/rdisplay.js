@@ -29,6 +29,9 @@ function rdisplay() {
 	// Generate the table of requirements
 	$("table#reqtable").each( function(i) {
 		var $table = $(this);
+		$("table#reqtable tbody").each( function(i) {
+			var $table = $(this);
+		});
 		reqInfo.forEach( function(element, index, array) {
 			// Add a new table row to the table itself
 			var $row = $("<tr></tr>");
@@ -46,6 +49,27 @@ function rdisplay() {
 			celltitle.append(element.content);
 		})
 	});
+
+	// // Generate the table of requirements
+	// $("table#reqtable, tbody#reqtable").each( function(i) {
+	// 	var $table = $(this);
+	// 	reqInfo.forEach( function(element, index, array) {
+	// 		// Add a new table row to the table itself
+	// 		var $row = $("<tr></tr>");
+	// 		$table.append($row);
+	//
+	// 		cellref = $("<td></td>");
+	// 		$row.append(cellref)
+	// 		reqref = $("<a></a>");
+	// 		cellref.append(reqref);
+	// 		reqref.attr("href", ucrUri + "#" + element.id);
+	// 		reqref.append(element.title)
+	//
+	// 		celltitle = $("<td></td>");
+	// 		$row.append(celltitle);
+	// 		celltitle.append(element.content);
+	// 	})
+	// });
 
 	$("ul#reclist, ol#reclist").each( function(i) {
 		var $list = $(this);

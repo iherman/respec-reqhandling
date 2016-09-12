@@ -89,7 +89,19 @@ Insert the following table into the document:
   </table>
 ```
 
-The table is expanded by adding table rows, each with two table cells: the [title](#title) and the [content](#content) of the requirement, respectively. The first cell, ie, the title, is an active link to the requirement itself. There are rows for each requirement, referred to in document order.
+or, in a more complex case:
+
+```
+  <table id="reqtable">
+     <thead>
+         <!-- possible header rows -->
+     </thead>
+     <tbody>
+     </tbody>
+  </table>
+ ```
+
+The table (or, if applicable, the table body) is expanded by adding table rows, each with two table cells: the [title](#title) and the [content](#content) of the requirement, respectively. The first cell, ie, the title, is an active link to the requirement itself. There are rows for each requirement, referred to in document order.
 
 #### Generate a list of requirements
 
@@ -119,4 +131,4 @@ Insert the following list into the document:
 4. [Add](id:ucruri), in `respecConfig`, `ucrUri: "URI-to-the-UCR-Document"` (this entry defaults to the empty string, ie, the fragment identifirs for the requirements will remain intact).
 
 ----
-11 September 2016
+12 September 2016
