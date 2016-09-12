@@ -61,7 +61,7 @@ There are two ways to do that. Either:
 or
 
 ```
-  <a href="#myid" class="full-req-ref"></a>
+  <a href="#myid" class="req-ref-full"></a>
 ```
 
 
