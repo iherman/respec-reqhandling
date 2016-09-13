@@ -9,15 +9,15 @@ A small set of functions that can be used together with [respec](https://github.
 
 The functions in this repo are meant to make these tasks a bit easier.
 
-(Note that `respec` does have some undocumented possibilities for those, but they have proven  too poor for my usage. This set is meant to be a replacement for those.)
+(Note that `respec` does have some undocumented possibilities for those, but they have proven incomplete for my usage needs. This set is meant to be a replacement for those.)
 
 ## Usage
 
-(See the separate [installation section](#install) on how to install add these functions to the documents.)
+See the separate [installation section](#install) on how to install add these functions to the documents.
 
 ### The UCR document
 
-(See a [toy example](examples/ucr.html).)
+See a [toy example](examples/ucr.html).
 
 #### Define requirements
 
@@ -30,7 +30,7 @@ A requirement must be set up as follows.
 
 where `p` can be any other element; typical alternatives may be `li` or `span`. In what follows, the string 'My requirement' will be referred to as the [“content”](id:content) of the requirement.
 
-The element is modified by prepending the content with a
+The element is modified by `respec` by prepending the content with a
 
 
 ```
@@ -38,11 +38,11 @@ The element is modified by prepending the content with a
 ```
 
 
-where the space is a non-breaking space; `i` is a number starting by 1 and increased for each requirement in document order (regardless of the document’s section numbers). This string will be referred to, in what follows, as the [“title”](id:title) of the requirement.
+where the space is a non-breaking space, and `i` is a number starting by 1 and increased for each requirement in document order (regardless of the document’s section numbers). This string will be referred to, in what follows, as the [“title”](id:title) of the requirement.
 
 ####  [Storing requirement data in an external file](id:storage)
 
-If the URI of the document is expanded in the browser (i.e., in the address bar) by adding the fragment identifier `#saveReqs`, a dialogue pops up, offering the storage of the file in the form of a javascript file. This file should be used in case the requirements are referred to in _another_ document.
+If the URI of the document is expanded in the browser (e.g., in the address bar) by adding the fragment identifier `#saveReqs`, a dialogue pops up offering the storage of the file in the form of a javascript file. This file should be used in case the requirements are referred to from _another_ document.
 
 ### [Referring to requirements](id:referring)
 
@@ -52,11 +52,9 @@ This can either be done in the UCR document itself (see [a toy UCR example](exam
 
 There are two ways to do that. Either:
 
-
 ```
   <a href="#myid" class="req-ref"></a>
 ```
-
 
 or
 
@@ -65,7 +63,7 @@ or
 ```
 
 
-In the final form both cases the reference refers to the requirement itself (i.e., it will be expanded, if necessary, to a full URI; see [setting the UCR's URI](#ucruri) below as part of the installation). The content of the `a` element is the [title](#title) of the requirement, or the [title](#title) followed by the [content](#content) and separated by the ': ' characters. I.e., in our example, the two results are
+In the final form both cases the reference refers to the requirement itself (i.e., it will be expanded, if applicable, to a full URI; see [setting the UCR's URI](#ucruri) below as part of the installation). The content of the `a` element is the [title](#title) of the requirement, or the [title](#title) followed by the [content](#content) and separated by the ': ' characters, respectively. I.e., in our example, the two results are
 
 ```
   <a href="URIOUCRDOCUMENT#myid" class="req-ref">Req. i</a>
@@ -121,7 +119,7 @@ Insert the following list into the document:
 1. Add into the header (*after* the reference to `respec`): `<script class="remove" src="scripts/rcollect.js"></script>`.
 2. If the document also uses internal [references to requirements](#referring), add also (after the previous reference): `script class="remove" src="scripts/rdisplay.js"></script>`.
 3. Add, in `respecConfig`, `preProcess : [rcollect],` or `preProcess : [rcollect, rdisplay],` depending on whether the document uses internal [references to requirements](#referring) or not.
-4. Add, in `respecConfig`, postProcess: [rstore].
+4. Add, in `respecConfig`, `postProcess: [rstore]`.
 
 ### [Other documents](id:install_other)
 
@@ -131,4 +129,4 @@ Insert the following list into the document:
 4. [Add](id:ucruri), in `respecConfig`, `ucrUri: "URI-to-the-UCR-Document"` (this entry defaults to the empty string, ie, the fragment identifirs for the requirements will remain intact).
 
 ----
-12 September 2016
+13 September 2016
