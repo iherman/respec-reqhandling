@@ -128,18 +128,20 @@ Insert the following list into the document:
 
 ### [UCR document](id:install_ucr)
 
-1.	Add into the header (*after* the reference to `respec`\): `<script class="remove" src="scripts/rcollect.js"></script>`.
-2.	If the document also uses internal [references to requirements](#referring), add also (after the previous reference): `<script class="remove" src="scripts/rdisplay.js"></script>`.
-3.	Add, in `respecConfig`, `preProcess : [rcollect],` or `preProcess : [rcollect, rdisplay],` depending on whether the document uses internal [references to requirements](#referring) or not.
-4.	Add, in `respecConfig`, `postProcess: [rstore]` if you intend to store the requirements in a separate file to be used by other documents.
+1.	Be careful that the reference to `respec` should be synchronous, ie, the attribute `async` should *not* be present
+2.	Add into the header (*after* the reference to `respec`\): `<script class="remove" src="scripts/rcollect.js"></script>`.
+3.	If the document also uses internal [references to requirements](#referring), add also (after the previous reference): `<script class="remove" src="scripts/rdisplay.js"></script>`.
+4.	Add, in `respecConfig`, `preProcess : [rcollect],` or `preProcess : [rcollect, rdisplay],` depending on whether the document uses internal [references to requirements](#referring) or not.
+5.	Add, in `respecConfig`, `postProcess: [rstore]` if you intend to store the requirements in a separate file to be used by other documents.
 
 ### [Other documents](id:install_other)
 
-1.	Add, into the header (*after* the reference to `respec`\): `<script class="remove" src="reqInfo.js"></script>`, where `reqInfo.js` is the file generated when [storing the requirements](#storage).
-2.	Add, into the header (after the previous reference): `script class="remove" src="scripts/rdisplay.js"></script>`.
-3.	Add, in `respecConfig`, `preProcess : [rdisplay],`
-4.	[Add](id:ucruri), in `respecConfig`, `ucrUri: "URI-to-the-UCR-Document"` (this entry defaults to the empty string, ie, the fragment identifiers for the requirements will remain intact).
+1.	Be careful that the reference to `respec` should be synchronous, ie, the attribute `async` should *not* be present
+2.	Add, into the header (*after* the reference to `respec`\): `<script class="remove" src="reqInfo.js"></script>`, where `reqInfo.js` is the file generated when [storing the requirements](#storage).
+3.	Add, into the header (after the previous reference): `script class="remove" src="scripts/rdisplay.js"></script>`.
+4.	Add, in `respecConfig`, `preProcess : [rdisplay],`
+5.	[Add](id:ucruri), in `respecConfig`, `ucrUri: "URI-to-the-UCR-Document"` (this entry defaults to the empty string, ie, the fragment identifiers for the requirements will remain intact).
 
 ---
 
-27 October 2016
+30 October 2016

@@ -389,6 +389,7 @@ pre.editor-colors .markdown .link .string,
 <h2><a href="id:install">Installation</a></h2>
 <h3><a href="id:install_ucr">UCR document</a></h3>
 <ol>
+<li>Be careful that the reference to <code style="font-family: Courier Prime Code;">respec</code> should be synchronous, ie, the attribute <code style="font-family: Courier Prime Code;">async</code> should <em>not</em> be present</li>
 <li>Add into the header (<em>after</em> the reference to <code style="font-family: Courier Prime Code;">respec</code>): <code style="font-family: Courier Prime Code;">&lt;script class=&quot;remove&quot; src=&quot;scripts/rcollect.js&quot;&gt;&lt;/script&gt;</code>.</li>
 <li>If the document also uses internal <a href="#referring">references to requirements</a>, add also (after the previous reference): <code style="font-family: Courier Prime Code;">&lt;script class=&quot;remove&quot; src=&quot;scripts/rdisplay.js&quot;&gt;&lt;/script&gt;</code>.</li>
 <li>Add, in <code style="font-family: Courier Prime Code;">respecConfig</code>, <code style="font-family: Courier Prime Code;">preProcess : [rcollect],</code> or <code style="font-family: Courier Prime Code;">preProcess : [rcollect, rdisplay],</code> depending on whether the document uses internal <a href="#referring">references to requirements</a> or not.</li>
@@ -396,11 +397,12 @@ pre.editor-colors .markdown .link .string,
 </ol>
 <h3><a href="id:install_other">Other documents</a></h3>
 <ol>
+<li>Be careful that the reference to <code style="font-family: Courier Prime Code;">respec</code> should be synchronous, ie, the attribute <code style="font-family: Courier Prime Code;">async</code> should <em>not</em> be present</li>
 <li>Add, into the header (<em>after</em> the reference to <code style="font-family: Courier Prime Code;">respec</code>): <code style="font-family: Courier Prime Code;">&lt;script class=&quot;remove&quot; src=&quot;reqInfo.js&quot;&gt;&lt;/script&gt;</code>, where <code style="font-family: Courier Prime Code;">reqInfo.js</code> is the file generated when <a href="#storage">storing the requirements</a>.</li>
 <li>Add, into the header (after the previous reference): <code style="font-family: Courier Prime Code;">script class=&quot;remove&quot; src=&quot;scripts/rdisplay.js&quot;&gt;&lt;/script&gt;</code>.</li>
 <li>Add, in <code style="font-family: Courier Prime Code;">respecConfig</code>, <code style="font-family: Courier Prime Code;">preProcess : [rdisplay],</code></li>
 <li><a href="id:ucruri">Add</a>, in <code style="font-family: Courier Prime Code;">respecConfig</code>, <code style="font-family: Courier Prime Code;">ucrUri: &quot;URI-to-the-UCR-Document&quot;</code> (this entry defaults to the empty string, ie, the fragment identifiers for the requirements will remain intact).</li>
 </ol>
 <hr>
-<p>27 October 2016</p></body>
+<p>30 October 2016</p></body>
 </html>
